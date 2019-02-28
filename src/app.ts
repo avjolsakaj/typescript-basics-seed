@@ -339,3 +339,141 @@
 // console.log(pizzaName);
 
 //#endregion
+
+//#region Creating Interfaces
+
+// interface Pizza {
+//   name: string;
+//   sizes: string[];
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return { name, sizes };
+// }
+
+// pizza = createPizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza);
+
+//#endregion
+
+//#region Interface with function types
+
+// interface Pizza {
+//   name: string;
+//   sizes: string[];
+//   getAvailableSizez(): string[];
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizez() {
+//       return this.sizes;
+//     }
+//   };
+// }
+
+// pizza = createPizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza);
+
+//#endregion
+
+//#region Extending Interfaces
+
+// interface Sizes {
+//   sizes: string[];
+// }
+
+// interface Pizza extends Sizes {
+//   name: string;
+//   getAvailableSizez(): string[];
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizez() {
+//       return this.sizes;
+//     }
+//   };
+// }
+
+// pizza = createPizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza);
+
+//#endregion
+
+//#region Interfaces and optional properties
+
+// interface Sizes {
+//   sizes: string[];
+// }
+
+// interface Pizza extends Sizes {
+//   name: string;
+//   toppings?: number;
+//   getAvailableSizez(): string[];
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizez() {
+//       return this.sizes;
+//     }
+//   };
+// }
+
+// pizza = createPizza("Pepperoni", ["small", "medium"]);
+// pizza.toppings = 1;
+
+// console.log(pizza);
+
+//#endregion
+
+//#region Interfaces with index signatures
+
+// interface Sizes {
+//   sizes: string[];
+// }
+
+// interface Pizza extends Sizes {
+//   name: string;
+//   toppings?: number;
+//   getAvailableSizez(): string[];
+//   [key: number]: string;
+// }
+
+// let pizza: Pizza;
+
+// function createPizza(name: string, sizes: string[]): Pizza {
+//   return {
+//     name,
+//     sizes,
+//     getAvailableSizez() {
+//       return this.sizes;
+//     }
+//   };
+// }
+
+// pizza = createPizza("Pepperoni", ["small", "medium"]);
+// pizza[1] = "xys";
+// pizza.toppings = 1;
+
+// console.log(pizza);
+
+//#endregion

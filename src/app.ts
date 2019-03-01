@@ -477,3 +477,335 @@
 // console.log(pizza);
 
 //#endregion
+
+//#region  Understanding classes and constructors
+
+// class Pizza {
+//   name: string;
+//   toppings: string[] = [];
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   removeTopping(topping: string) {
+//     //this.toppings.reduce();
+//   }
+// }
+
+// const pizza = new Pizza("Pepperoni");
+
+// pizza.addTopping("pepperoni");
+
+// console.log(pizza);
+
+//#endregion
+
+//#region  Public and Private Members
+
+// class Pizza {
+//   private name: string;
+//   public toppings: string[] = [];
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   private removeTopping(topping: string) {}
+// }
+
+// const pizza = new Pizza("Pepperoni");
+
+// pizza.addTopping("pepperoni");
+
+// console.log(pizza);
+
+//#endregion
+
+//#region  Readonly Members
+
+// class Pizza {
+//   readonly name: string;
+//   public toppings: string[] = [];
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   private removeTopping(topping: string) {}
+// }
+
+// const pizza = new Pizza("Pepperoni");
+
+// pizza.addTopping("pepperoni");
+
+// console.log(pizza);
+
+//#endregion
+
+//#region  Setters and Getters
+
+// class Sizes {
+//   public sizes: string[];
+//   constructor(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+
+//   get availableSizes() {
+//     return this.sizes;
+//   }
+
+//   set availableSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+// }
+
+// const sizes = new Sizes(["small", "medium"]);
+
+// //Invoke getter
+// console.log(sizes.availableSizes);
+// // Invoke setter
+// sizes.availableSizes = ["medium", "large"];
+
+// console.log(sizes.availableSizes);
+
+// class Pizza {
+//   readonly name: string;
+//   public toppings: string[] = [];
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   private removeTopping(topping: string) {}
+// }
+
+// const pizza = new Pizza("Pepperoni");
+
+// pizza.addTopping("pepperoni");
+
+// console.log(pizza);
+
+//#endregion
+
+//#region  Class Inheritance
+
+// class Sizes {
+//   public sizes: string[];
+//   constructor(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+
+//   get availableSizes() {
+//     return this.sizes;
+//   }
+
+//   set availableSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+// }
+
+// class Pizza extends Sizes {
+//   readonly name: string;
+//   public toppings: string[] = [];
+
+//   constructor(name: string, sizes: string[]) {
+//     super(sizes);
+
+//     this.name = name;
+//   }
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   private removeTopping(topping: string) {}
+// }
+
+// const pizza = new Pizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza.availableSizes);
+
+// pizza.addTopping("pepperoni");
+
+//#endregion
+
+//#region  Abstract Classes
+
+// abstract class Sizes {
+//     public sizes: string[];
+//     constructor(sizes: string[]) {
+//         this.sizes = sizes;
+//     }
+
+//     get availableSizes() {
+//         return this.sizes;
+//     }
+
+//     set availableSizes(sizes: string[]) {
+//         this.sizes = sizes;
+//     }
+// }
+
+// class Pizza extends Sizes {
+//     readonly name: string;
+//     public toppings: string[] = [];
+
+//     constructor(name: string, sizes: string[]) {
+//         super(sizes);
+
+//         this.name = name;
+//     }
+
+//     public addTopping(topping: string) {
+//         this.toppings.push(topping);
+//     }
+
+//     private removeTopping(topping: string) { }
+// }
+
+// const pizza = new Pizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza.availableSizes);
+
+// pizza.addTopping("pepperoni");
+
+//#endregion
+
+//#region  Protected Members and Inheritance
+
+// abstract class Sizes {
+//   protected sizes: string[];
+
+//   constructor(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+
+//   get availableSizes() {
+//     return this.sizes;
+//   }
+
+//   set availableSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+// }
+
+// class Pizza extends Sizes {
+//   readonly name: string;
+//   public toppings: string[] = [];
+
+//   constructor(name: string, sizes: string[]) {
+//     super(sizes);
+
+//     this.name = name;
+//   }
+
+//   public updateSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   private removeTopping(topping: string) {}
+// }
+
+// const pizza = new Pizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza.availableSizes);
+
+// pizza.updateSizes(["large"]);
+
+// console.log(pizza.availableSizes);
+
+//#endregion
+
+//#region  Interface contracts with "implements"
+
+// interface SizesInterface {
+//   availableSizes: string[];
+// }
+
+// interface PizzaInterface extends SizesInterface {
+//   readonly name: string;
+//   toppings: string[];
+//   updateSizes(sizes: string[]): void;
+//   addTopping(topping: string): void;
+// }
+
+// abstract class Sizes implements SizesInterface {
+//   protected sizes: string[];
+
+//   constructor(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+
+//   get availableSizes() {
+//     return this.sizes;
+//   }
+
+//   set availableSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+// }
+
+// class Pizza extends Sizes implements PizzaInterface {
+//   readonly name: string;
+//   public toppings: string[] = [];
+
+//   constructor(name: string, sizes: string[]) {
+//     super(sizes);
+
+//     this.name = name;
+//   }
+
+//   public updateSizes(sizes: string[]) {
+//     this.sizes = sizes;
+//   }
+
+//   public addTopping(topping: string) {
+//     this.toppings.push(topping);
+//   }
+
+//   private removeTopping(topping: string) {}
+// }
+
+// const pizza = new Pizza("Pepperoni", ["small", "medium"]);
+
+// console.log(pizza.availableSizes);
+
+// pizza.updateSizes(["large"]);
+
+// console.log(pizza.availableSizes);
+
+//#endregion
+
+//#region  Static Properties and Methods
+
+// class Coupon {
+//   static allowed = ["Pepperoni", "Blazzing Inferno"];
+//   static create(percetage: number) {
+//     return `PIZZA_RESTAURANT_${percetage}`;
+//   }
+// }
+
+// console.log(Coupon.create(25));
+
+//#endregion
